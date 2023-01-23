@@ -8,7 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "highlight.js": "^11.7.0",
+    "vue": "^3.2.45",
+    "vue-highlight-code": "^0.1.16"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
