@@ -1,20 +1,21 @@
 .tw-btn{
    display: inline-block;
-   padding: 0 20px;
+   padding: 0 16.5px;
    height: 40px;
    line-height: 40px;
-   border-radius: 20px;
-   font-size: 14px;
+   border-radius:15px;
    text-align: center;
    cursor: pointer;
    transition: all .3s;
+   @apply w-36 bg-transparent  text-zinc-400 text-sm font-medium ring-1 ring-inset ring-white/10;
+   @apply hover:ring-white/15 hover:bg-white/5 hover:text-zinc-100;
+   letter-spacing: .3px;
+
    &.tw-btn-primary{
       color: #fff;
-      background-color: #409eff;
-      border: 1px solid #409eff;
+      @apply bg-blue-500 border border-blue-500;
       &:hover{
-         color: #409eff;
-         background-color: #fff;
+         @apply bg-blue-700;
       }
    }
    &.tw-btn-success{
@@ -77,4 +78,38 @@
       border: 1px solid #ebeef5;
       cursor: not-allowed;
    }
+}
+
+.code.hljs.atom_one_dark{
+   width: 100%;
+   background-color: transparent;
+}
+.code_header{
+   display:none !important
+}
+.hljs{
+   width: 100%;
+   background-color: transparent !important;
+}
+.code.hljs{
+   height: auto !important;
+   .code_area.change_hight{
+      height: auto !important;
+      
+   }
+   .code_area pre{
+      height: auto !important;
+   }
+} 
+
+.tabHeader{
+   border:0;
+   // remove focus-active
+   &:focus{
+      outline: none !important;
+   }
+   [data-headlessui-state="selected"]{
+      @apply text-emerald-400 right-1 border-emerald-400;
+   }
+   
 }

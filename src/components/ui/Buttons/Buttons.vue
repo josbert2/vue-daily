@@ -1,18 +1,10 @@
 <script setup>
-
-      const typeButtons = {
-         default: {
-            name: 'Default',
-            class: 'tw-btn'
-         }
-      }
-   
-      defineProps({
+      const props = defineProps({
          buttons: {
             type: Array,
             required: true
          },
-         type: {
+         typeBtn: {
             type: String,
             required: true
          },
@@ -22,12 +14,24 @@
          },
 
       })
+      const typeButtons = {
+         default: {
+            name: 'Default',
+            class: 'tw-btn'
+         },
+         primary: {
+            name: 'Primary',
+            class: 'tw-btn-primary'
+         },
+      }
 </script>
 
 <template>
-   <button v-for="button in buttons" :key="button.id" :type="typeButtons[type]" :class="'tw-btn tw-btn-' + size">
+   <button v-for="button in buttons" 
+           v-if="typeButtons[props.typeBtn]" :key="button.id" 
+           :class="'tw-btn ' + (typeButtons[props.typeBtn] ? typeButtons[props.typeBtn].class : '') + ' '">
       {{ button.name }}
-    </button>
+   </button>
 </template>
 <script>
 import "@/assets/components/buttons/index.scss"
