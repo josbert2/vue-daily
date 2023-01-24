@@ -48,24 +48,32 @@
                     <p class="lead">
                         Un botón por defecto es un componente de interfaz de usuario estándar que permite a los usuarios interactuar con la aplicación. Se usa la clase <br> <code>tw-btn</code> por defecto para usar dicho elemento.
                     </p>
-                    <Buttons
+                    <div class="flex gap-5">
+                        <Buttons
+                            :buttons="[
+                                { name: 'Enviar', href: '#', current: true }]"
+                            :size="2"
+                            typeBtn="default"
+                        />
+                        <Buttons
                         :buttons="[
                             { name: 'Enviar', href: '#', current: true }]"
                         :size="2"
-                        typeBtn="default"
+                        typeBtn="defaultGray"
                     />
+                    </div>
                   <div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10">
                        <TabGroup>
                             <TabList class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent">
                                 <div class="flex w-full gap-4 -mb-px text-xs font-medium" role="tablist" aria-orientation="horizontal">
-                                    <div class="flex items-center w-full tabHeader">
+                                    <div class="flex items-center w-full tabHeader gap-5">
                                         <Tab data-headlessui-state="selected"
-                                            class="py-3 active transition border-b border-transparent f text-zinc-400 hover:text-zinc-300"
-                                            
-                                            
-                                        
-                                        >
-                                            CSS
+                                            class="py-3 active transition border-b border-transparent f text-zinc-400 hover:text-zinc-300">
+                                            HTML
+                                        </Tab>
+                                        <Tab data-headlessui-state="selected"
+                                            class="py-3 transition border-b border-transparent f text-zinc-400 hover:text-zinc-300">
+                                            SCSS
                                         </Tab>
                                         
                                     </div>
@@ -95,14 +103,7 @@
                                                     <span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/v1/conversations</span>
                                                 </div>
                                                 <div class="relative">
-                                                    <pre class="p-4 overflow-x-auto text-xs text-white">
-                                                        <HighCode
-                                                        class="code"
-                                                        :codeValue="value"
-                                                        theme="dark"
-                                                        :lang="vue"
-                                                        ></HighCode>
-                                                    </pre>
+                                                    <CodeHightLightView />
                                                     <button
                                                         type="button"
                                                         class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"
@@ -131,6 +132,9 @@
                                             aria-labelledby="headlessui-tabs-tab-:R96jd6:"
                                         ></span>
                                     </div>
+                                </TabPanel>
+                                <TabPanel>
+                                    sad
                                 </TabPanel>
                             </TabPanels>
                        </TabGroup>
@@ -189,7 +193,7 @@
                                                     <span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/v1/conversations</span>
                                                 </div>
                                                 <div class="relative">
-                                                    <pre class="p-4 overflow-x-auto text-xs text-white">
+                                                    <pre class="p-4 flex overflow-x-auto text-xs text-white">
                                                         <HighCode
                                                         class="code"
                                                         :codeValue="value"
@@ -199,7 +203,7 @@
                                                     </pre>
                                                     <button
                                                         type="button"
-                                                        class="group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"
+                                                        class=" group/button absolute top-3.5 right-4 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"
                                                     >
                                                         <span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300">
                                                             <svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 transition-colors fill-zinc-500/20 stroke-zinc-500 group-hover/button:stroke-zinc-400">

@@ -38,7 +38,23 @@ module.exports = {
         7.5: '0.075',
         15: '0.15',
       },
+      colors: {
+        primary: {
+            DEFAULT: '#00B4F0',
+            '50': '#D7F5FF',
+            '100': '#BDEFFF',
+            '200': '#8AE2FF',
+            '300': '#57D5FF',
+            '400': '#24C8FF',
+            '500': '#00B4F0',
+            '600': '#008EBD',
+            '700': '#00688A',
+            '800': '#004157',
+            '900': '#001B24'
+        },
+      }
     },
   },
+
   plugins: [require('@tailwindcss/typography')],
 }

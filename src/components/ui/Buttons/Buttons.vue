@@ -19,6 +19,10 @@
             name: 'Default',
             class: 'tw-btn'
          },
+         defaultGray: {
+            name: 'Default Gray',
+            class: 'tw-btn-gray'
+         },
          primary: {
             name: 'Primary',
             class: 'tw-btn-primary'

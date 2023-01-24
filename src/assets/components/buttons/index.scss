@@ -3,19 +3,32 @@
    padding: 0 16.5px;
    height: 40px;
    line-height: 40px;
-   border-radius:15px;
+   border-radius:12px;
    text-align: center;
    cursor: pointer;
    transition: all .3s;
    @apply w-36 bg-transparent  text-zinc-400 text-sm font-medium ring-1 ring-inset ring-white/10;
    @apply hover:ring-white/15 hover:bg-white/5 hover:text-zinc-100;
    letter-spacing: .3px;
+   &:focus{
+      border: 1px solid #409eff;
+   }
+
+   &.tw-btn-gray{
+      color: #fff;
+      background-color: #909399;
+      border: 1px solid #909399;
+      &:hover{
+         color: #909399;
+         background-color: #fff;
+      }
+   }
 
    &.tw-btn-primary{
       color: #fff;
-      @apply bg-blue-500 border border-blue-500;
+      @apply bg-primary-500 border border-primary-500;
       &:hover{
-         @apply bg-blue-700;
+         @apply bg-primary-400 border-primary-400
       }
    }
    &.tw-btn-success{
@@ -99,6 +112,7 @@
    }
    .code_area pre{
       height: auto !important;
+      display: flex;
    }
 } 
 
