@@ -10,9 +10,7 @@
    @apply w-36 bg-transparent  text-zinc-400 text-sm font-medium ring-1 ring-inset ring-white/10;
    @apply hover:ring-white/15 hover:bg-white/5 hover:text-zinc-100;
    letter-spacing: .3px;
-   &:focus{
-      border: 1px solid #409eff;
-   }
+
 
    &.tw-btn-gray{
       color: #fff;
@@ -122,7 +120,7 @@
    &:focus{
       outline: none !important;
    }
-   [data-headlessui-state="selected"]{
+   [aria-selected="true"]{
       @apply text-emerald-400 right-1 border-emerald-400;
    }
    
