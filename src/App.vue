@@ -9,7 +9,7 @@
     import CodeHightLightView from './components/CodeHightLightView.vue';
     import Buttons from './components/ui/Buttons/Buttons.vue';
 
-    const value = `<button class="tw-btn tw-btn">Enviar</button>`;
+    const value = `<button class="tw-btn">Enviar</button>`;
 
 
 </script>
@@ -66,12 +66,12 @@
                        <TabGroup>
                             <TabList class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent">
                                 <div class="flex w-full gap-4 -mb-px text-xs font-medium" role="tablist" aria-orientation="horizontal">
-                                    <div class="flex items-center w-full tabHeader gap-5">
+                                    <div class="flex items-center w-full gap-5 tabHeader">
                                         <Tab data-headlessui-state="selected"
-                                            class="py-3 active transition border-b border-transparent f text-zinc-400 hover:text-zinc-300">
+                                            class="py-3 transition border-b border-transparent active f text-zinc-400 hover:text-zinc-300">
                                             HTML
                                         </Tab>
-                                        <Tab data-headlessui-state="selected"
+                                        <Tab  data-headlessui-state=""
                                             class="py-3 transition border-b border-transparent f text-zinc-400 hover:text-zinc-300">
                                             SCSS
                                         </Tab>
@@ -158,7 +158,7 @@
                                 <div class="flex w-full gap-4 -mb-px text-xs font-medium" role="tablist" aria-orientation="horizontal">
                                     <div class="flex items-center w-full tabHeader">
                                         <Tab data-headlessui-state="selected"
-                                            class="py-3 active transition border-b border-transparent f text-zinc-400 hover:text-zinc-300"
+                                            class="py-3 transition border-b border-transparent active f text-zinc-400 hover:text-zinc-300"
                                             
                                             
                                         
@@ -193,7 +193,7 @@
                                                     <span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">/v1/conversations</span>
                                                 </div>
                                                 <div class="relative">
-                                                    <pre class="p-4 flex overflow-x-auto text-xs text-white">
+                                                    <pre class="flex p-4 overflow-x-auto text-xs text-white">
                                                         <HighCode
                                                         class="code"
                                                         :codeValue="value"
