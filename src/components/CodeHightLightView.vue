@@ -1,17 +1,18 @@
 <script setup>
    import { HighCode } from 'vue-highlight-code';
    import 'vue-highlight-code/dist/style.css';
-   defineProps({
+   const props = defineProps({
       code: {
          type: String,
          required: true
       }
    })
 
-   const value = `<button class="tw-btn tw-btn">Enviar</button>`;
+   const value = props.code;
 </script>
 <template>
    <div class="">
+   
       <pre class="p-4 flex overflow-x-auto text-xs text-white">
          <HighCode
          class="code"
@@ -36,6 +37,6 @@
             Copy
          </span>
          <span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span>
-                                                    </button>
+      </button>
    </div>
 </template>
