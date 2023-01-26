@@ -2,7 +2,18 @@
 
     import { HighCode } from 'vue-highlight-code';
     import 'vue-highlight-code/dist/style.css';
-     
+    import data from './components/ui/Buttons/code/data.js';
+
+    const objectData = data;
+
+    function removeSPaceString(string) {
+        return string.replace(/\s/g, '');
+    }
+
+    for (const buttonType in data.buttons) {
+        data.buttons["default"].html = data.buttons["default"].html.split("> ").join(">").split(" <").join("<");
+    }
+    console.log(data.buttons["default"].html)
 
     // Components
     import Header from './components/Layouts/Header.vue';
@@ -66,8 +77,8 @@
                   <div class="my-6 overflow-hidden shadow-md not-prose rounded-2xl bg-zinc-900 dark:ring-1 dark:ring-white/10">
                     <Tabs 
                         :tabs="[
-                            { name: 'HTML', code: `<buttonclass="twbtn"></button>`, current: true },
-                            { name: 'CSS',  code: '<div></div>', }
+                            { name: 'HTML', code: objectData['buttons']['default']['html'], current: true },
+                            { name: 'CSS',  code: objectData['buttons']['default']['css'], }
                         ]"
                     />
                   </div>
