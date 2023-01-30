@@ -10,7 +10,7 @@
    @apply w-36 bg-transparent  text-zinc-400 text-sm font-medium ring-1 ring-inset ring-white/10;
    @apply hover:ring-white/15 hover:bg-white/5 hover:text-zinc-100;
    letter-spacing: .3px;
-
+   
 
    &.tw-btn-gray{
       color: #fff;
@@ -89,7 +89,43 @@
       border: 1px solid #ebeef5;
       cursor: not-allowed;
    }
+   &.tw-btn-disabled{
+      @apply cursor-not-allowed bg-[#26292B] text-zinc-400 ring-[#26292B] border-none;
+   }
+   &.tw-btn-mini{
+      height: 34px;
+      line-height: 24px;
+      padding: 0 12px;
+      font-size: 12px;
+      width: 80px;
+   }
+   &.tw-btn-sm{
+      height: 32px;
+      line-height: 32px;
+      padding: 0 15px;
+      font-size: 14px;
+      width: 100px;
+   }
+   &.tw-btn-lg{
+      height: 48px;
+      line-height: 48px;
+      padding: 0 20px;
+      font-size: 16px;
+      width: 120px;
+   }
+   &.tw-btn-xl{
+      height: 64px;
+      line-height: 64px;
+      padding: 0 25px;
+      font-size: 18px;
+      width: 140px;
+   }
+   &.full-width{
+      width: 100%;
+   }
 }
+
+
 
 .code.hljs.atom_one_dark{
    width: 100%;
