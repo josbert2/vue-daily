@@ -22,7 +22,12 @@ const data = {
       },
       "defaultGray":{
          "html": ""
-      }
+      },
+      "disabled":{
+         "html": `
+            <button class='tw-btn tw-disabled'>Enviar</button>
+         `
+      },
    }
 }
 

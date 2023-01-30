@@ -27,6 +27,10 @@
             name: 'Primary',
             class: 'tw-btn-primary'
          },
+         disabled: {
+            name: 'Disabled',
+            class: 'tw-btn-disabled'
+         },
       }
 </script>
 

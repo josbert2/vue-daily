@@ -11,7 +11,8 @@
     "@headlessui/vue": "^1.7.7",
     "highlight.js": "^11.7.0",
     "vue": "^3.2.45",
-    "vue-highlight-code": "^0.1.16"
+    "vue-highlight-code": "^0.1.16",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
