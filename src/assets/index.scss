@@ -1,1 +1,14 @@
-@import 'components/buttons/all'
+@import 'components/buttons/index';
+
+
+.svg-title-icon{
+  
+   svg{
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+      path{
+         stroke: #6EE7B7;
+      }
+   }
+}

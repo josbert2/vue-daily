@@ -1,3 +1,18 @@
+<script setup>
+   // ref is a function that returns a reactive object for a given value
+   import { ref, onMounted } from 'vue'
+   import navItemsData from '../../data/routes.js'
+
+
+   // Esto hace que el componente sea reactiva para que se actualice cuando cambie el valor
+   const navItems = navItemsData
+
+  
+   // Esto se ejecuta cuando el componente se monta
+   onMounted(() => {
+      console.log('Componente montado')
+   })
+</script>
 <template>
    <header class="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
       <div class="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pt-4 lg:pb-8 lg:dark:border-white/10 xl:w-80">
@@ -86,8 +101,15 @@
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/">API</a></li>
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#">Documentation</a></li>
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#">Support</a></li>
-               <li class="relative mt-6 md:mt-0">
-                  <h2 class="text-xs font-semibold text-zinc-900 dark:text-white">Guides</h2>
+               <li class="relative mt-6 md:mt-0" v-for="navItem in navItems" :key="navItem.title">
+                  <div class="flex items-center pb-3">
+                     <svg class="mr-3 fill-emerald-400/10 stroke-current" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 7v10c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5V7c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5Z" stroke="#6EE7B7" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15.5 2v7.86c0 .44-.52.66-.84.37l-2.32-2.14a.496.496 0 0 0-.68 0l-2.32 2.14c-.32.29-.84.07-.84-.37V2h7ZM13.25 14h4.25M9 18h8.5" stroke="#6EE7B7" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                     </svg>
+                     <h2 class="text-base font-semibold text-zinc-900 dark:text-white">{{ navItem.title }}</h2>
+                  </div>
+                  
                   <div class="relative pl-2 mt-3">
                         <div
                            class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5"
@@ -132,8 +154,11 @@
                         </ul>
                   </div>
                </li>
-               <li class="relative mt-6">
-                  <h2 class="text-xs font-semibold text-zinc-900 dark:text-white">Resources</h2>
+               <!--<li class="relative mt-6">
+                  <div class="flex items-center pb-3 svg-title-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3.67 2.5v11.97c0 .98.46 1.91 1.25 2.5l5.21 3.9c1.11.83 2.64.83 3.75 0l5.21-3.9c.79-.59 1.25-1.52 1.25-2.5V2.5H3.67Z" stroke="#FF8A65" stroke-width="1.5" stroke-miterlimit="10"></path><path d="M2 2.5h20" stroke="#FF8A65" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path><path d="M8 8h8M8 13h8" stroke="#FF8A65" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                     <h2 class="text-base font-semibold text-zinc-900 dark:text-white">Theme</h2>
+                  </div>
                   <div class="relative pl-2 mt-3">
                         <div class="absolute inset-y-0 w-px left-2 bg-zinc-900/10 dark:bg-white/5"></div>
                         <ul role="list" class="border-l border-transparent">
@@ -157,6 +182,51 @@
                         </ul>
                   </div>
                </li>
+               <li class="relative mt-6">
+                  <div class="flex items-center pb-3 svg-title-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 9.11v5.77C3 17 3 17 5 18.35l5.5 3.18c.83.48 2.18.48 3 0l5.5-3.18c2-1.35 2-1.35 2-3.46V9.11C21 7 21 7 19 5.65l-5.5-3.18c-.82-.48-2.17-.48-3 0L5 5.65C3 7 3 7 3 9.11Z" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                     <h2 class="text-base font-semibold text-zinc-900 dark:text-white">Layout</h2>
+                  </div>
+               </li>
+               <li class="relative mt-6">
+                  <div class="flex items-center pb-3 svg-title-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M20 9.6c0-4-1.6-5.6-5.6-5.6H9.6C5.6 4 4 5.6 4 9.6v4.8c0 4 1.6 5.6 5.6 5.6" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.35 8c-.55-.7-1.47-1-2.85-1h-3C8 7 7 8 7 10.5v3c0 1.38.3 2.3.99 2.85M8.01 4V2M12 4V2M16 4V2M20 8h2M8.01 20v2M2 8h2M2 12h2M2 16h2" stroke="#FF8A65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16.71 18.59a1.59 1.59 0 1 0 0-3.18 1.59 1.59 0 0 0 0 3.18Z" stroke="#FF8A65" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.41 17.46v-.93c0-.55.45-1 1-1 .96 0 1.35-.68.87-1.51a1 1 0 0 1 .37-1.37l.91-.53c.42-.25.96-.1 1.21.32l.06.1c.48.83 1.26.83 1.74 0l.06-.1c.25-.42.79-.56 1.21-.32l.91.53c.48.28.65.89.37 1.37-.48.83-.09 1.51.87 1.51.55 0 1 .45 1 1v.93c0 .55-.45 1-1 1-.96 0-1.35.68-.87 1.51a1 1 0 0 1-.37 1.37l-.91.53c-.42.25-.96.1-1.21-.32l-.06-.1c-.48-.83-1.26-.83-1.74 0l-.06.1c-.25.42-.79.56-1.21.32l-.91-.53c-.48-.28-.65-.89-.37-1.37.48-.83.09-1.51-.87-1.51a.99.99 0 0 1-1-1Z" stroke="#FF8A65" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                     <h2 class="text-base font-semibold text-zinc-900 dark:text-white">Components</h2>
+                  </div>
+                  <div class="relative pl-2 mt-3">
+                        
+                        <div class="absolute inset-y-0 w-px left-2 bg-zinc-900/10 dark:bg-white/5"></div>
+                        <div class="absolute w-px h-6 left-2 bg-emerald-500" v-bind:style="{'top': '4px', 'opacity': '1'}"></div>
+                        <ul role="list" class="border-l border-transparent">
+                           <li class="relative">
+                              <a aria-current="page" class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-900 dark:text-white" href="/">
+                                 <span class="truncate">Avatar</span>
+                              </a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/quickstart"><span class="truncate">Quickstart</span></a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/sdks"><span class="truncate">SDKs</span></a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/authentication">
+                                    <span class="truncate">Authentication</span>
+                              </a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/pagination"><span class="truncate">Pagination</span></a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/errors"><span class="truncate">Errors</span></a>
+                           </li>
+                           <li class="relative">
+                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/webhooks"><span class="truncate">Webhooks</span></a>
+                           </li>
+                        </ul>
+                  </div>
+                  
+               </li>
                <li class="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
                   <a
                         class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full"
@@ -164,7 +234,7 @@
                   >
                         Sign in
                   </a>
-               </li>
+               </li>-->
             </ul>
       </nav>
    </div>

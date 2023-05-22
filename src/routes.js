@@ -7,6 +7,12 @@ const routes = [
          name: 'Home',
          component: Home
     },
+    //Componentes
+    {
+        path: '/components/avatar',
+        name: 'Avatar',
+        component: () => import('@/components/Avatar.vue')
+    },
     {
         path: '/components/buttons',
         name: 'Buttons',
