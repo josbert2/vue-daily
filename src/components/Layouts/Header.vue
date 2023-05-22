@@ -101,7 +101,7 @@
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/">API</a></li>
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#">Documentation</a></li>
                <li class="md:hidden"><a class="block py-1 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#">Support</a></li>
-               <li class="relative mt-6 md:mt-0" v-for="navItem in navItems" :key="navItem.title">
+               <li class="relative mt-10 " v-for="navItem in navItems" :key="navItem.title">
                   <div class="flex items-center pb-3">
                      <svg class="mr-3 fill-emerald-400/10 stroke-current" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none">
                         <path d="M21 7v10c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5V7c0-3 1.5-5 5-5h8c3.5 0 5 2 5 5Z" stroke="#6EE7B7" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -111,46 +111,21 @@
                   </div>
                   
                   <div class="relative pl-2 mt-3">
-                        <div
+                        <!--<div
                            class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5"
                            v-bind:style="{'height': '96px', 'top': '0px', 'opacity': '1', 'border-radius': '2.95203% / 8.33333%', 'transform': 'none', 'transform-origin': '50% 50% 0px'}"
                         ></div>
                         <div class="absolute inset-y-0 w-px left-2 bg-zinc-900/10 dark:bg-white/5"></div>
-                        <div class="absolute w-px h-6 left-2 bg-emerald-500" v-bind:style="{'top': '4px', 'opacity': '1'}"></div>
-                        <ul role="list" class="border-l border-transparent">
-                           <li class="relative">
-                              <a aria-current="page" class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-900 dark:text-white" href="/"><span class="truncate">Introduction</span></a>
-                              <ul role="list" v-bind:style="{'opacity': '1'}">
-                                    <li>
-                                       <a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#guides"><span class="truncate">Guides</span></a>
-                                    </li>
-                                    <li>
-                                       <a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/#resources">
-                                          <span class="truncate">Resources</span>
-                                       </a>
-                                    </li>
-                              </ul>
-                           </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/quickstart"><span class="truncate">Quickstart</span></a>
-                           </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/sdks"><span class="truncate">SDKs</span></a>
-                           </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/authentication">
-                                    <span class="truncate">Authentication</span>
+                        <div class="absolute w-px h-6 left-2 bg-emerald-500" v-bind:style="{'top': '4px', 'opacity': '1'}"></div>-->
+                        <ul v-if="navItem.subItems" role="list" class="border-l border-transparent">
+                           
+                           <li class="relative" v-for="subSubItem in navItem.subItems" :key="subSubItem.title">
+                              <a :href="subSubItem.link" 
+                                 class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
+                                 <span class="truncate">{{ subSubItem.title }}</span>
                               </a>
                            </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/pagination"><span class="truncate">Pagination</span></a>
-                           </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/errors"><span class="truncate">Errors</span></a>
-                           </li>
-                           <li class="relative">
-                              <a class="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm transition text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/webhooks"><span class="truncate">Webhooks</span></a>
-                           </li>
+                           
                         </ul>
                   </div>
                </li>

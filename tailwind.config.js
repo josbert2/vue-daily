@@ -56,5 +56,35 @@ module.exports = {
     },
   },
 
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-content-placeholder')({
+      width: '100%',
+      bgColor: '#ffffff09',
+      placeholders: {
+        'paragraph': {
+          height: 5, // the height of the container in em
+          rows: [ // This class will have 4 rows:
+            [100], // A 100% width row
+            [100], // Another 100% width row
+            [40], // A 40% width row
+            [] // And an empty row, to create separation
+          ]
+        },
+        'line-title': {
+          height: 1.5,
+          rows: [
+            [30],
+          ]
+        },
+        'line-preview': {
+          height: 1.5,
+          rows: [
+            [25],
+          ]
+        }
+      }
+    }),
+  ],
+
 }
